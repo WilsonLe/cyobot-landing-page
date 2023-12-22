@@ -1,8 +1,9 @@
+import { Footer } from "@/components/footer/footer";
+import { Nav } from "@/components/nav/nav";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { Nav } from "@/components/nav/nav";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,11 +25,12 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
         )}
       >
         <Nav />
-        {children}
+        <div className="py-20">{children}</div>
+        <Footer />
       </body>
     </html>
   );
